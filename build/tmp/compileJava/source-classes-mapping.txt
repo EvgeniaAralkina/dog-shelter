@@ -1,0 +1,38 @@
+com/example/config/MvcConfig.java
+ com.example.config.MvcConfig
+com/example/Form.java
+ com.example.Form
+com/example/dao/EmailService.java
+ com.example.dao.EmailService
+com/example/config/WebSecurityConfig.java
+ com.example.config.WebSecurityConfig
+com/example/controllers/DogController.java
+ com.example.controllers.DogController
+com/example/config/WebAppInit.java
+ com.example.config.WebAppInit
+com/example/ServingWebContentApplication.java
+ com.example.ServingWebContentApplication
+com/example/aspect/MyAspect.java
+ com.example.aspect.MyAspect
+com/example/dao/UserService.java
+ com.example.dao.UserService
+com/example/User.java
+ com.example.User
+com/example/controllers/RegistrationController.java
+ com.example.controllers.RegistrationController
+com/example/repository/UserRepository.java
+ com.example.repository.UserRepository
+com/example/repository/DogRepository.java
+ com.example.repository.DogRepository
+com/example/controllers/AdminController.java
+ com.example.controllers.AdminController
+com/example/dao/DogService.java
+ com.example.dao.DogService
+com/example/Role.java
+ com.example.Role
+com/example/Dog.java
+ com.example.Dog
+com/example/config/Config.java
+ com.example.config.Config
+com/example/controllers/MyController.java
+ com.example.controllers.MyController

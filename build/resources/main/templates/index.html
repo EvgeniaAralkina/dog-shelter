@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head> <link rel="stylesheet" type="text/css" th:href ="@{/css/shelterStyle.css}">
+    <link href="/images/dog.png" rel="icon" type="image/x-icon" />
+    <meta charset="utf-8">
+    <title>Dog shelter</title>
+</head>
+<body>
+
+<!--меню-->
+<div class ="nav">
+    <ul class="menu-main">
+        <li><a href = "/" th:href="@{http://localhost:8080}" class="current">Home</a></li>
+        <li><a href="allDogs" th:href="@{http://localhost:8080/allDogs}">Выбрать питомца</a></li>
+        <li><a href="help" th:href="@{http://localhost:8080/help}">Помочь приюту</a></li>
+        <li><a href="account" th:href="@{http://localhost:8080/myaccount}">Личный кабинет</a></li>
+        </ul>
+</div>
+<div class="container">
+    <img th:src="@{/images/dogIndex.jpeg}" alt="Snow" style="width:100%;">
+    <div class="centered">
+        <h1>Здесь люди находят четвероногих
+            друзей из приютов</h1>
+    </div>
+</div>
+<div>
+    <h4>Как можно забрать собаку</h4>
+    <div class="parent">
+        <div class="child">
+            <h3>1. Выберите собаку</h3>
+                <p>Питомца можно выбрать в разделе <a href = "allDogs">«Найти питомца»</a> в главном меню.</p>
+        </div>
+        <div class="child">
+            <h3 align="center">2. Зарегистрируйтесь и оформите заявку</h3>
+            <p>Заявку можно оформить, нажав кнопку «Взять питомца» в анкете собаки.
+            </p>
+        </div>
+        <div class="child">
+            <h3>3. Согласуйте удобную дату и время</h3>
+            <p>Согласовать дату можно с куратором, контактные данные которого будут отпралены Вам на почту
+            </p>
+        </div>
+    </div>
+</div>
+<h4>Контактные данные:</h4>
+
+<div class = "parent">
+    <div class = "child2">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d263081.1712724884!2d37.6165650599107!3d55.46593806415767!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414aaecfd4d9925b%3A0xa1785b94ad224c07!2z0J_RgNC40Y7RgiDQtNC70Y8g0LHQtdC30LTQvtC80L3Ri9GFINC20LjQstC-0YLQvdGL0YUg0KnQtdGA0LHQuNC90LrQsCDQrtCX0JDQng!5e0!3m2!1sru!2sru!4v1620486169852!5m2!1sru!2sru"
+                width=100% height="450" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+    <div class = "child2">
+        <h5>Аддрес: </h5>ул. Брусилова, Москва, 117148
+        <h5>Номер телефона: </h5>+79790335688
+        <h5>Время работы: </h5>10:00 - 20:00
+
+    </div>
+</div>
+</body>
+</html>

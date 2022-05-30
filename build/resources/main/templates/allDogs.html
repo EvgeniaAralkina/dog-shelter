@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href ="@{/css/shelterStyle.css}">
+    <link href="/images/dog.png" rel="icon" type="image/x-icon" />
+    <title>Выбрать питомца</title>
+    <style>
+        .scale {
+            transition: 0.5s; /* Время эффекта */
+        }
+        .scale:hover {
+            transform: scale(1.2); /* Увеличиваем масштаб */
+        }
+    </style>
+</head>
+<body>
+<div class ="nav">
+    <ul class="menu-main">
+        <li><a href = "/" th:href="@{http://localhost:8080}" class="current">Home</a></li>
+        <li><a href="allDogs" th:href="@{http://localhost:8080/allDogs}">Выбрать питомца</a></li>
+        <li><a href="help" th:href="@{http://localhost:8080/help}">Помочь приюту</a></li>
+        <li><a href="account" th:href="@{http://localhost:8080/myaccount}">Личный кабинет</a></li>
+    </ul>
+</div>
+<div class="container">
+    <img th:src="@{/images/dog5.jpeg}" alt="Snow" style="width:100%;">
+    <div class="centered"><br>
+        <h1>Здесь вы можете найти питомца</h1>
+    </div>
+</div>
+<!-- Фильтр для поиска -->
+<form th:method="POST" th:action="@{/allDogs/processForm}" th:object="${form}">
+<!--<form th:method="POST" th:action="@{/allDogs}" th:object="${Dog}">-->
+<div class = "form">
+    <div class="parent">
+        <div class="child">
+            <h5>Пол питомца:</h5>
+                <input type="checkbox" name="genderM" th:checked="${genderM}">мальчик
+            <br/>
+                <input type="checkbox" name="genderF" th:checked="${genderF}">девочка
+        </div>
+        <div class="child">
+            <h5>Размер:</h5>
+            <input type="checkbox" name="middle" th:checked="${middle}">средний
+            <br/>
+            <input type="checkbox" name="large" th:checked="${large}">большой
+        </div>
+        <div class="child">
+            <h5>Возраст:</h5>
+            <input type="checkbox" name="young" th:checked="${young}">до года
+            <br/>
+            <input type="checkbox" name="old" th:checked="${old}">более года
+        </div>
+    </div>
+
+    <input type="submit" value="Show!"/>
+</div>
+</form>
+
+<div th:each="dogs : ${dog}">
+    <div th:if="${dogs.getUser.getId==0}">
+        <div style="margin: 10px;">
+            <div class="allDog">
+                <h1><td th:text="${dogs.getName()}">name0</td></h1>
+                    <p>
+                        <h2><td th:text="${dogs.getAge()}">age</td></h2>
+                        <h2><td th:text="${dogs.getGender()}">gender</td></h2>
+                    </p>
+                    <div class = "button">
+                        <a  th:href="@{http://localhost:8080/allDogs/{id}(id=${dogs.getId()})}">Подробнее</a>
+                    </div>
+            </div>
+            <div class = "allDog2">
+                <a th:href="@{http://localhost:8080/allDogs/{id}(id=${dogs.getId()})}">
+                    <img th:src="@{/images/{dogPhoto}(dogPhoto=${dogs.getPhoto()})}"  class="scale" alt="Snow">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

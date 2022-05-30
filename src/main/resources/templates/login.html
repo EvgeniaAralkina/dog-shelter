@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" th:href ="@{/css/shelterStyle.css}">
+<link href="/images/dog.png" rel="icon" type="image/x-icon" />
+<meta charset="utf-8">
+<title>Dog shelter</title>
+</head>
+<body>
+
+<!--меню-->
+<div class ="nav">
+    <ul class="menu-main">
+        <li><a href = "/" th:href="@{http://localhost:8080}" class="current">Home</a></li>
+        <li><a href="allDogs" th:href="@{http://localhost:8080/allDogs}">Выбрать питомца</a></li>
+        <li><a href="help" th:href="@{http://localhost:8080/help}">Помочь приюту</a></li>
+        <li><a href="account" th:href="@{http://localhost:8080/myaccount}">Личный кабинет</a></li>
+    </ul>
+</div>
+<div th:if="${param.logout}">
+    <h5>You have been logged out.</h5>
+</div>
+<!--<form th:action="@{/login}" method="post">
+    <div><label> User Name : <input type="text" name="username"/> </label></div>
+    <div><label> Password: <input type="password" name="password"/> </label></div>
+    <div><input type="submit" value="Sign In"/></div>
+</form>-->
+
+<form class="decor" th:action="@{/login}" method="post">
+    <div class="form-left-decoration"></div>
+    <div class="form-right-decoration"></div>
+    <div class="circle"></div>
+    <div class="form-inner">
+        <h3>Вход</h3>
+        <div th:if="${param.error}">
+            <h5>Invalid username or password.</h5>
+        </div>
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" value="Войти">
+        <a href="/registration">Новый пользователь</a>
+    </div>
+</form>
+</body>
+</html>

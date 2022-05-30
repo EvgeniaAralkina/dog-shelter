@@ -1,0 +1,549 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+
+body {
+    font-family: Helvetica, serif;
+    font-size: 11pt; /* Размер основного шрифта в пунктах  */
+    background-color: #EEEDE9 ; /* Цвет фона веб-страницы */
+
+}
+h1 {   /*заголовки*/
+    color: white; /* Цвет заголовка */
+    font-size: 30pt; /* Размер шрифта в пунктах */
+    font-family:monospace; /* Семейство шрифтов */
+    font-weight: bold; /* Нормальное начертание текста  */
+    border-bottom: 4px solid #305659; /* Параметры линии под текстом */
+}
+h2{   /*пункты меню*/
+    color:white;
+    font-size: 20pt;
+    /*font-family: Helvetica;*/
+    font-weight: bold;
+
+}
+h3{   /*текущие пункты*/
+    color: #305659;
+    font-size: 20pt;
+    font-family:monospace;
+    font-weight: bold;
+    text-align:  center;
+}
+h4{  /*текущие подпункты*/
+    color: #305659;
+    font-size: 30pt;
+    font-family:monospace;
+    font-weight: bold;
+    text-align:  center;
+}
+h5{ /*ежим для слабовидящих (заголовок) */
+    color: #305659;
+    font-size: 15pt;
+    font-family:monospace;
+    font-weight: bold;
+    text-align: left;
+}
+
+p {
+    text-indent: 20px;
+    text-align: justify; /* Выравнивание по ширине */
+    margin-left: 60px; /* Отступ слева в пикселах */
+    margin-right: 20px; /* Отступ справа в пикселах */
+}
+a {
+    color: #8DA3AB;
+    /* Цвет обычной ссылки */
+    /* padding: 6px; /* Поля вокруг текста */
+    text-decoration: none;
+}
+a:hover {
+    color: #f00707; /* Цвет ссылки при наведении на нее курсора мыши */
+    text-decoration: underline; /* Добавляем подчеркивание */
+}
+
+ul {
+    list-style: none;
+    margin: 0 auto;
+
+}
+nav {
+    display: block;
+    margin: 0 auto 30px;
+}
+
+.nav{
+    background: #340980;
+}
+.content{
+    background: #340980;
+    float: left;
+    width: 70%;
+    margin-right: 2%;
+    padding: 5px;
+}
+.panel{
+    background: #340980;
+    float: left;
+    width: 28%;
+}
+
+
+.menu-main {
+    list-style: none;
+    margin: 40px 0 5px;
+    padding: 25px 0 5px;
+    text-align: center;
+    background: #8DA3AB;
+}
+.menu-main li {display: inline-block;}
+.menu-main li:after {
+    content: "|";
+    color: #606060;
+    display: inline-block;
+    vertical-align:top;
+}
+.menu-main li:last-child:after {content: none;}
+.menu-main a {
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 20px;
+    margin: 0 10px 0 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: color .10s;
+}
+.menu-main a, .menu-main a:visited {color: #2C2727;}
+.menu-main a.current{color: #305659;}
+.menu-main a:hover{color: #305659;}
+.menu-main a:before,
+.menu-main a:after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    top: auto;
+    right: 50%;
+    bottom: 8px;
+    left: 50%;
+    background: #305659;
+    transition: .8s;
+}
+.menu-main a:hover:before, .menu-main .current:before {left: 0;}
+.menu-main a:hover:after, .menu-main .current:after {right: 0;}
+@media (max-width: 550px) {
+    .menu-main {padding-top: 0;}
+    .menu-main li {display: block;}
+    .menu-main li:after {content: none;}
+    .menu-main a {
+        padding: 25px 0 20px;
+        margin: 0 30px;
+    }
+}
+
+.container {
+    position: relative;
+
+    color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+/* Centered text */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align:  center;
+}
+
+.child {
+    padding: 15px;
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.child:last-child {
+    margin-right: 0;
+}
+
+.child2 {
+    padding: 15px;
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.child2:last-child {
+    margin-right: 0;
+}
+/* форма */
+* {
+    box-sizing: border-box;
+}
+.decor {
+    position: relative;
+    max-width: 400px;
+    margin: 50px auto 0;
+    background: white;
+    border-radius: 30px;
+}
+.form-left-decoration, .form-right-decoration {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    background: #EEEDE9;
+    border-radius: 20px;
+}
+.form-left-decoration {
+    bottom: 60px;
+    left: -30px;
+}
+.form-right-decoration {
+    top: 60px;
+    right: -30px;
+}
+.form-left-decoration:before, .form-left-decoration:after, .form-right-decoration:before, .form-right-decoration:after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    border-radius: 30px;
+    background: white;
+}
+.form-left-decoration:before {
+    top: -20px;
+}
+.form-left-decoration:after {
+    top: 20px;
+    left: 10px;
+}
+.form-right-decoration:before {
+    top: -20px;
+    right: 0;
+}
+.form-right-decoration:after {
+    top: 20px;
+    right: 10px;
+}
+.circle {
+    position: absolute;
+    bottom: 80px;
+    left: -55px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+}
+.form-inner {
+    padding: 50px;
+}
+.form-inner input, .form-inner textarea {
+    display: block;
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    background: #E9EFF6;
+    line-height: 40px;
+    font-weight: bold;
+    border-width: 0;
+    border-radius: 20px;
+}
+.form-inner input[type="submit"]{
+    margin-top: 30px;
+    background: #f69a73;
+    border-bottom: 4px solid #d87d56;
+    color: white;
+    font-size: 14px;
+    cursor:pointer;
+}
+.form-inner input[type="submit"]:hover{
+    margin-top: 30px;
+    background: #d87d56;
+    border-bottom: 4px solid #d87d56;
+    color: white;
+    font-size: 14px;
+}
+.form-inner a{
+    background: #f69a73;
+    border-bottom: 4px solid #d87d56;
+    color: white;
+    font-size: 14px;
+    display: inline-block;
+    border-radius: 25px;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin: 10px 20px;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+.form-inner a:hover {
+    background: #d87d56;
+}
+.form-inner h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #707981;
+    font-weight: bold;
+}
+.form-inner h5 {
+    font-size: 14px;
+    color: orangered;
+}
+.allDog {
+    padding: 15px;
+    float: left;
+    width: 60%;
+    margin-right: 4%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.allDog2 {
+    margin-right: 0;
+    padding: 15px;
+    float: left;
+    width: 36%;
+    height: 60%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.allDog2 img {
+    border-radius: 10px;
+    width: 75%;
+}
+.allDog h1 {
+    color: #305659; /* Цвет заголовка */
+    font-size: 30pt; /* Размер шрифта в пунктах */
+    font-family:monospace; /* Семейство шрифтов */
+    font-weight: bold; /* Нормальное начертание текста  */
+    border-bottom: 4px solid #305659;
+}
+.allDog h2 {
+    font-size: 14pt;
+    /*font-family: Helvetica;*/
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #AEB4BB;
+    border-radius: 25px;
+    background: #AEB4BB;
+    color: #fff;
+}
+.allDog h3{
+    font-size: 14pt;
+    /*font-family: Helvetica;*/
+    display: inline-block;
+    text-decoration: none;
+    font-weight: normal;
+    line-height: 1.5;
+    padding: 10px 30px;
+    margin: 10px 20px;
+    color: black;
+    text-align: left;
+}
+.allDog h4{
+    color: #305659; /* Цвет заголовка */
+    font-size: 25pt; /* Размер шрифта в пунктах */
+    font-family:monospace; /* Семейство шрифтов */
+    font-weight: bold;
+}
+.allDog h5{
+    color: gray; /* Цвет заголовка */
+    font-size: 14pt;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: normal;
+    line-height: 1.5;
+    padding: 10px 30px;
+    margin: 10px 20px;
+    text-align: left;
+}
+.allDog hr{
+    border: none; /* Убираем границу */
+    background-color: #305659; /* Цвет линии */
+    color: #305659; /* Цвет линии для IE6-7 */
+    height: 4px; /* Толщина линии */
+}
+
+.button a{
+    font-size: 14pt;
+    /*font-family: Helvetica;*/
+    font-weight: bold;
+    /*display: inline-block;*/
+    text-decoration: none;
+    padding: 10px 30px;
+    margin: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #fe6637;
+    border-radius: 8px;
+    background: #fe6637;
+    color: #fff;
+    transition: 0.5s ease;
+    cursor:pointer;
+}
+
+.button a:hover {
+    border: 2px solid #cf471d;
+    background: #cf471d;
+    color: #fff;
+}
+
+.form input[type="submit"] {
+    font-size: 12pt;
+    /*font-family: Helvetica;*/
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #fe6637;
+    border-radius: 8px;
+    background: #fe6637;
+    color: #fff;
+    transition: 0.5s ease;
+    cursor:pointer;
+}
+
+
+.form input[type="submit"]:hover {
+    border: 2px solid #cf471d;
+    background: #cf471d;
+    color: #fff;
+}
+
+/*
+.form input[type="checkbox"] {
+    margin-top: 30px;
+    background: #f69a73;
+    border-bottom: 4px solid #d87d56;
+    color: white;
+    font-size: 14px;
+}
+ */
+.username h1{   /*заголовки*/
+    color: #305659; /* Цвет заголовка */
+    font-size: 30pt; /* Размер шрифта в пунктах */
+    font-family:monospace; /* Семейство шрифтов */
+    font-weight: bold; /* Нормальное начертание текста  */
+    border-bottom: 4px solid #305659; /* Параметры линии под текстом */
+}
+
+#confirm {
+    background: rgba(102, 102, 102, 0.5);
+    width: 100%;
+    height: 100%;
+    /*position: absolute;*/
+    top: 0;
+    left: 0;
+    display: none;
+
+    position: fixed;
+    overflow: auto;
+    z-index: 1000;
+}
+#okno {
+    width: 65%;
+    height: min-content;
+    padding: 15px;
+    border: 5px solid #fe6637;;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: #EEEDE9;
+    overflow: auto;
+    font-size: 14pt;
+    /*font-family: Helvetica;*/
+    text-decoration: none;
+    font-weight: normal;
+    line-height: 1.5;
+    color: black;
+    text-align: left;
+}
+#confirm:target {display: block;}
+
+
+#button2{
+    font-size: 14pt;
+    /*font-family: Helvetica;*/
+    font-weight: bold;
+    display: block;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #fe6637;
+    border-radius: 8px;
+    background: #fe6637;
+    color: #fff;
+    transition: 0.5s ease;
+    cursor:pointer;
+}
+
+#button2:hover {
+    border: 2px solid #cf471d;
+    background: #cf471d;
+    color: #fff;
+}
+
+#button1{
+    font-size: 14pt;
+    /*font-family: Helvetica;*/
+    font-weight: bold;
+    display: block;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #fe6637;
+    border-radius: 8px;
+    background: #fe6637;
+    color: #fff;
+    transition: 0.5s ease;
+    cursor:pointer;
+}
+
+#button1:hover {
+    border: 2px solid #cf471d;
+    background: #cf471d;
+    color: #fff;
+}
+
+
+
+
+
+

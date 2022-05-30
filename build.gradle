@@ -1,0 +1,74 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    //developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    //testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation group: 'org.thymeleaf', name: 'thymeleaf-spring5', version: '3.0.12.RELEASE'
+    implementation 'org.projectlombok:lombok:1.18.18'
+    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+    implementation group: 'org.springframework', name: 'spring-webmvc', version: '5.3.6'
+    implementation group: 'org.springframework', name: 'spring-web', version: '5.3.6'
+    implementation group: 'org.springframework', name: 'spring-core', version: '5.3.6'
+    implementation group: 'org.springframework', name: 'spring-context', version: '5.3.6'
+    implementation group: 'org.hibernate.orm', name: 'hibernate-core', version: '6.0.0.Alpha7'
+    // https://mvnrepository.com/artifact/com.zaxxer/HikariCP
+    implementation group: 'com.zaxxer', name: 'HikariCP', version: '4.0.3'
+// https://mvnrepository.com/artifact/org.postgresql/postgresql
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.20'
+// https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api
+    implementation group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.2.Final'
+// https://mvnrepository.com/artifact/org.springframework/spring-orm
+    implementation group: 'org.springframework', name: 'spring-orm', version: '5.3.6'
+
+    implementation 'org.hibernate:hibernate-entitymanager:5.4.21.Final'
+// https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa
+    implementation group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.5.0'
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-logging
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-logging', version: '2.4.5'
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.0-alpha1'
+
+
+// https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+    annotationProcessor 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+    testCompileOnly 'org.projectlombok:lombok'
+
+    // https://mvnrepository.com/artifact/org.aspectj/aspectjtools
+    implementation group: 'org.aspectj', name: 'aspectjtools', version: '1.9.6'
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-mail
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '2.4.5'
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.security:spring-security-test'
+    implementation group: 'org.springframework.session', name: 'spring-session-jdbc', version: '2.4.3'
+// https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter
+    testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.9.0'
+// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.7.1'
+    implementation group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity5', version: '3.0.4.RELEASE'
+    // https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator
+    // https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator
+    implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '6.1.6.Final'
+
+}
+
+test {
+    useJUnitPlatform()
+}

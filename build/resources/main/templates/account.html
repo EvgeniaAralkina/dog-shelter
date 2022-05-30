@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href ="@{/css/shelterStyle.css}">
+    <link href="/images/dog.png" rel="icon" type="image/x-icon" />
+    <title>account</title>
+</head>
+<body>
+
+<div class ="nav">
+    <ul class="menu-main">
+        <li><a href = "/" th:href="@{http://localhost:8080}" class="current">Home</a></li>
+        <li><a href="allDogs" th:href="@{http://localhost:8080/allDogs}">Выбрать питомца</a></li>
+        <li><a href="help" th:href="@{http://localhost:8080/help}">Помочь приюту</a></li>
+        <li><a href="account" th:href="@{http://localhost:8080/myaccount}">Личный кабинет</a></li>
+    </ul>
+</div>
+
+<br>
+<div class = "username">
+    <h1>Hello, <spawn th:text="${user.getUsername()}"></spawn>!</h1>
+
+    <div style="margin: 10px;">
+        <div th:each="dogs : ${user.getDogSet}">
+            <div class="allDog">
+                <h4>Имя вашей собаки: <td th:text="${dogs.getName()}">name0</td></h4>
+                <p>
+                    <h2><td th:text="${dogs.getAge()}">age</td></h2>
+                    <h2><td th:text="${dogs.getGender()}">gender</td></h2>
+                </p>
+                <h3><td th:text="${dogs.getDescription()}">description</td></h3>
+                <hr>
+                <h5>На указанную вами почту выслано письмо с
+                контактными данными куратора вашего питомца, у которого
+                вы можете уточнить возможные дату и время, когда можно забрать
+                собаку.
+                </h5>
+                <br>
+            </div>
+            <div class = "allDog2">
+                <img th:src="@{/images/{dogPhoto}(dogPhoto=${dogs.getPhoto()})}"  class="scale" alt="Snow">
+            </div>
+        </div>
+    </div>
+</div>
+
+<br/>
+<div class = "form">
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Выйти"/>
+    </form>
+</div>
+
+
+</body>
+</html>

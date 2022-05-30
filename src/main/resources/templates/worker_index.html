@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>all workers</title>
+</head>
+<body>
+<div th:each="workers : ${worker}">
+      ID:  <td th:text="${workers.getId()}">name0</td>
+      First name:  <td th:text="${workers.getFirstName()}">name</td>
+      Middle Name:  <td th:text="${workers.getMiddleName()}">name2</td>
+      Last Name:  <td th:text="${workers.getLastName()}">name3</td>
+</div>
+</body>
+</html>

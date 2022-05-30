@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head> <link rel="stylesheet" type="text/css" th:href ="@{/css/shelterStyle.css}">
+    <link href="/images/dog.png" rel="icon" type="image/x-icon" />
+    <meta charset="utf-8">
+    <title>Dog shelter</title>
+</head>
+<body>
+
+<!--меню-->
+<div class ="nav">
+    <ul class="menu-main">
+        <li><a href = "/" th:href="@{http://localhost:8080}" class="current">Home</a></li>
+        <li><a href="allDogs" th:href="@{http://localhost:8080/allDogs}">Выбрать питомца</a></li>
+        <li><a href="help" th:href="@{http://localhost:8080/help}">Помочь приюту</a></li>
+        <li><a href="account" th:href="@{http://localhost:8080/myaccount}">Личный кабинет</a></li>
+    </ul>
+</div>
+        <div class="allDog">
+                <h1><td th:text="${dog.getName()}">name0</td></h1>
+                <p>
+                <h2><td th:text="${dog.getAge()}">age</td></h2>
+                <h2><td th:text="${dog.getGender()}">gender</td></h2>
+                </p>
+            <br/>
+            <h3><td th:text="${dog.getDescription()}">description</td></h3>
+            <br/>
+
+            <div id="confirm">
+                <div id="okno">
+                    <div class="allDog">
+                        <h1> Вы уверены?</h1>
+                    </div>
+
+                    <h3>После подтверждения вам на почту прийдет письмо с
+                        контактными данными куратора вашего питомца, у которого
+                        вы можете уточнить возможные дату и время, когда можно забрать
+                        собаку.
+                        </h3>
+                        <br>
+                        <button onClick="document.getElementById('confirm').style.display='none';
+                                    document.getElementById('button2').style.display='block';"
+                                id = "button1">
+                            Назад
+                        </button>
+
+                    <form th:method="POST" th:action="@{/myaccount}" th:object="${dog}">
+                        <div class = "form">
+                            <input type="text" name="name" th:value="${dog.getName()}" style="display: none;">
+                            <input type="submit" value="Забрать!"/>
+                        </div>
+                    </form>
+            </div>
+            </div>
+
+            <button onClick="document.getElementById('confirm').style.display='block';
+                                document.getElementById('button2').style.display='none';" id = "button2" >
+                Взять питомца
+            </button>
+
+        </div>
+        <div class = "allDog2">
+            <img th:src="@{/images/{dogPhoto}(dogPhoto=${dog.getPhoto()})}" width="75%" alt="Snow">
+        </div>
+
+
+
+
+
+</body>
+</html>

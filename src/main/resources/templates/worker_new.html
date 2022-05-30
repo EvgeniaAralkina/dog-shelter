@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New worker</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/worker}" th:object="${worker}">
+    <label for="firstName">Enter first name: </label>
+    <input type="text" th:field="*{firstName}" id="firstName"/>
+    <br/>
+    <label for="middleName">Enter middle name: </label>
+    <input type="text" th:field="*{middleName}" id="middleName"/>
+    <br/>
+    <label for="lastName">Enter last name: </label>
+    <input type="text" th:field="*{lastName}" id="lastName"/>
+    <br/>
+    <!-- <label for="manufacture_id">Enter manufacture id: </label>
+    <input type="text" th:field="*{manufacture_id}" id="manufacture_id"/>
+    <br/> -->
+    <input type="submit" value="Create!"/>
+</form>
+</body>
+</html>

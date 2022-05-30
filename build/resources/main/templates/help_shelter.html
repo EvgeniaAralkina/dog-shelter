@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href ="@{/css/shelterStyle.css}">
+    <link href="/images/dog.png" rel="icon" type="image/x-icon" />
+    <title>Помощь приюту</title>
+</head>
+<body>
+<div class ="nav">
+    <ul class="menu-main">
+        <li><a href = "/" th:href="@{http://localhost:8080}" class="current">Home</a></li>
+        <li><a href="allDogs" th:href="@{http://localhost:8080/allDogs}">Выбрать питомца</a></li>
+        <li><a href="help" th:href="@{http://localhost:8080/help}">Помочь приюту</a></li>
+        <li><a href="account" th:href="@{http://localhost:8080/myaccount}">Личный кабинет</a></li>
+    </ul>
+</div>
+<!--th:style="'background: url(/images/dog1.jpg); background-size: auto'">-->
+
+<div class="container">
+    <img th:src="@{/images/dog1.jpg}" alt="Snow" style="width:100%;">
+    <div class="centered"><br>
+        <h1>Помочь приюту</h1>
+        <br/>
+        <h2>Хотите помочь, но не можете взять питомца домой? Будьте другом и заботьтесь о животных в приютах!</h2>
+    </div>
+</div>
+<div>
+<h4>Как вы можете помочь</h4>
+    <div class="parent">
+        <div class="child">
+            <h3>Приезжай в гости!</h3>
+            <p>
+                Собакам и кошкам очень важно общение с человеком – социальные навыки помогут им быстрее найти хозяина.
+                Приезжайте поиграть, погулять и просто погладить питомцев!
+            </p>
+        </div>
+        <div class="child">
+            <h3 align="center">Подари!</h3>
+            <p>
+                Игрушки, одноразовые пеленки, медикаменты, корма, моющие средства и многое другое нужно животным каждый
+                день. Узнайте, чего не хватает питомцам в ближайшем к вам приюте!
+            </p>
+        </div>
+        <div class="child">
+            <h3 >Расскажи!</h3>
+            <p>
+                Информационная поддержка и участие в мероприятиях помогут кошкам и собакам из приютов встретить своего
+                человека. Узнайте, в активностях какого приюта вы можете принять участие!
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
